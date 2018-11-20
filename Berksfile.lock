@@ -1,0 +1,11 @@
+DEPENDENCIES
+  elasticsearch
+    git: git@github.com:EricaDaSilvaCorreia/Elasticsearch_Cookbook_.git
+    revision: c05d8d63a46daf6f2b88d956e36937e868ae88c8
+  nginx-cookbook
+    git: git@github.com:ryanlecoutresparta/nginx-cookbook.git
+    revision: fd4274488f9b2ee77276882fa6c7512f7b9408fa
+
+GRAPH
+  elasticsearch (0.1.0)
+  nginx-cookbook (0.1.0)
