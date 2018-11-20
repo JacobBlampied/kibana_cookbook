@@ -1,6 +1,6 @@
 #
-# Cookbook:: kibana
+# Cookbook:: build_cookbook
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-include_recipe 'nginx-cookbook::default'
+include_recipe 'delivery-truck::default'

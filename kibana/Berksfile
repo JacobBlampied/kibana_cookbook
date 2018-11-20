@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 source 'https://supermarket.chef.io'
 
-metadata
+cookbook 'nginx-cookbook', git: 'git@github.com:ryanlecoutresparta/nginx-cookbook.git'
