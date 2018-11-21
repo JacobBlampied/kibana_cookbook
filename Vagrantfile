@@ -10,6 +10,16 @@ end
 
 Vagrant.configure("2") do |config|
 
+  config.vm.define "elasticsearch" do |ela|
+    ela.vm.box = "ubuntu/xenial64"
+    ela.vm.network "private_network", ip: "192.168.10.35"
+    ela.hostsupdater.aliases = ["ela.local"]
+
+    ela.vm.provision "chef_solo" do |chef|
+        chef.add_recipe "elasticsearch::default"
+    end
+  end
+
   config.vm.define "kibana" do |kib|
     kib.vm.box = "ubuntu/xenial64"
     kib.vm.network "private_network", ip: "192.168.10.45"
@@ -18,16 +28,6 @@ Vagrant.configure("2") do |config|
     kib.vm.provision "chef_solo" do |chef|
         chef.add_recipe "kibana::default"
         chef.add_recipe "nginx-cookbook::default"
-    end
-  end
-
-  config.vm.define "elasticsearch" do |ela|
-    ela.vm.box = "ubuntu/xenial64"
-    ela.vm.network "private_network", ip: "192.168.10.35"
-    ela.hostsupdater.aliases = ["ela.local"]
-
-    ela.vm.provision "chef_solo" do |chef|
-        chef.add_recipe "elasticsearch::default"
     end
   end
 
